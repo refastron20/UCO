@@ -1,0 +1,3 @@
+/home/rafa/Escritorio/GitHub/UCO/Tercero/Algorítmica/Practica6/Codigo/build/CMakeFiles/rebuild_cache.dir
+/home/rafa/Escritorio/GitHub/UCO/Tercero/Algorítmica/Practica6/Codigo/build/CMakeFiles/nReinasBLV.dir
+/home/rafa/Escritorio/GitHub/UCO/Tercero/Algorítmica/Practica6/Codigo/build/CMakeFiles/edit_cache.dir

@@ -1,0 +1,4 @@
+/home/rafa/Escritorio/UCO/Tercero/FSIV/Practicas/P1/Interactivo/CMakeFiles/edit_cache.dir
+/home/rafa/Escritorio/UCO/Tercero/FSIV/Practicas/P1/Interactivo/CMakeFiles/rebuild_cache.dir
+/home/rafa/Escritorio/UCO/Tercero/FSIV/Practicas/P1/Interactivo/CMakeFiles/Interactivo.dir
+/home/rafa/Escritorio/UCO/Tercero/FSIV/Practicas/P1/Interactivo/CMakeFiles/Practica1.dir

@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rafa/Escritorio/GitHub/UCO/Tercero/FSIV/Practicas/repaso_practicas/p5/lbp.cpp
+lbp.h
+/home/rafa/Escritorio/GitHub/UCO/Tercero/FSIV/Practicas/repaso_practicas/p5/lbp.h
+vector
+-
+iostream
+-
+
+/home/rafa/Escritorio/GitHub/UCO/Tercero/FSIV/Practicas/repaso_practicas/p5/lbp.h
+opencv2/core.hpp
+-
+opencv2/highgui.hpp
+-
+opencv2/imgproc.hpp
+-
+
+/home/rafa/Escritorio/GitHub/UCO/Tercero/FSIV/Practicas/repaso_practicas/p5/test_lbp.cpp
+iostream
+-
+sstream
+-
+string
+-
+vector
+-
+opencv2/core.hpp
+-
+opencv2/highgui.hpp
+-
+lbp.h
+/home/rafa/Escritorio/GitHub/UCO/Tercero/FSIV/Practicas/repaso_practicas/p5/lbp.h
+

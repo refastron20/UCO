@@ -1,0 +1,6 @@
+En el ficehro practica1.cc está hecha la parte básica en la que se introduce una imagen de entrada
+y el nombre de la imagen de salida, si no se introduce nombre se le llamará salida.jpg.
+El programa abre la imagen, se selecciona un área  haciendo click y arrastrando el ratón, se dejara
+de seleccionar cuando se deje de pulsar, luego se pulsa cualquier tecla y se muestra la imagen editada.
+
+El fichero Interactivo sería igual pero el proceso es interactivo.

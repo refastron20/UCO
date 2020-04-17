@@ -1,0 +1,14 @@
+[2019-03-20, 13:38:26] ==> Valor de regexvalue en servidor:hola
+[2019-03-20, 13:38:35] ==> Recibido el mensaje: hola
+
+[2019-03-20, 13:38:35] ==> Enviado el mensaje: Empareja
+[2019-03-20, 13:38:39] ==> Recibido el mensaje: adioh
+
+[2019-03-20, 13:38:39] ==> Enviado el mensaje: No Empareja
+[2019-03-20, 13:38:44] ==> Recibido el mensaje: adioh mu wenas
+
+[2019-03-20, 13:38:44] ==> Enviado el mensaje: No Empareja
+[2019-03-20, 13:38:47] ==> Recibido el mensaje: holasa
+
+[2019-03-20, 13:38:47] ==> Enviado el mensaje: Empareja
+[2019-03-20, 13:39:02] ==> Enviado el mensaje: exit

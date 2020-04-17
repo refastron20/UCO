@@ -1,0 +1,3 @@
+/home/rafa/Escritorio/GitHub/UCO/Tercero/FSIV/Practicas/P3/build/CMakeFiles/rebuild_cache.dir
+/home/rafa/Escritorio/GitHub/UCO/Tercero/FSIV/Practicas/P3/build/CMakeFiles/sharpen.dir
+/home/rafa/Escritorio/GitHub/UCO/Tercero/FSIV/Practicas/P3/build/CMakeFiles/edit_cache.dir

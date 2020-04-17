@@ -1,0 +1,23 @@
+#cuerpo{width: 75%;
+  height: auto;
+  background-color: red;
+  margin: 0 auto;
+}
+#info{float: left;
+  width: 35%;
+  text-align: justify;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+}
+#curriculum{float: right;
+  width: 55%;
+  text-align: justify;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+}
+.parrafo{text-align: left;width: 90%;margin: 10px auto;border: 1px;border-style: solid;border-color: black;border-radius: 5px;font-style: italic;font-family: fantasy;}
+a{text-align: center;}

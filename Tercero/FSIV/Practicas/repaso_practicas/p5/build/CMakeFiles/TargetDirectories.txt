@@ -1,0 +1,3 @@
+/home/rafa/Escritorio/GitHub/UCO/Tercero/FSIV/Practicas/repaso_practicas/p5/build/CMakeFiles/rebuild_cache.dir
+/home/rafa/Escritorio/GitHub/UCO/Tercero/FSIV/Practicas/repaso_practicas/p5/build/CMakeFiles/lbpdesc.dir
+/home/rafa/Escritorio/GitHub/UCO/Tercero/FSIV/Practicas/repaso_practicas/p5/build/CMakeFiles/edit_cache.dir

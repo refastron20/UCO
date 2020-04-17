@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/rafa/Escritorio/GitHub/UCO/Tercero/Algorítmica/Practica3/Entero.cpp
+Entero.hpp
+/home/rafa/Escritorio/GitHub/UCO/Tercero/Algorítmica/Practica3/Entero.hpp
+cassert
+-
+iostream
+-
+cmath
+-
+
+/home/rafa/Escritorio/GitHub/UCO/Tercero/Algorítmica/Practica3/Entero.hpp
+string
+-
+iostream
+-
+
+/home/rafa/Escritorio/GitHub/UCO/Tercero/Algorítmica/Practica3/main.cpp
+Entero.hpp
+/home/rafa/Escritorio/GitHub/UCO/Tercero/Algorítmica/Practica3/Entero.hpp
+iostream
+-
+string
+-
+

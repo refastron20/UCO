@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/Entero.dir/main.cpp.o CMakeFiles/Entero.dir/Entero.cpp.o  -o Entero 

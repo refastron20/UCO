@@ -1,0 +1,4 @@
+/home/rafa/Escritorio/UCO/Tercero/FSIV/Practicas/P4/build/CMakeFiles/rebuild_cache.dir
+/home/rafa/Escritorio/UCO/Tercero/FSIV/Practicas/P4/build/CMakeFiles/Practica4.dir
+/home/rafa/Escritorio/UCO/Tercero/FSIV/Practicas/P4/build/CMakeFiles/edit_cache.dir
+/home/rafa/Escritorio/UCO/Tercero/FSIV/Practicas/P4/build/CMakeFiles/Calibrate.dir
