@@ -1,0 +1,13 @@
+(*
+Esto es un comentario bien hecho
+ *)
+inicio
+#programa inútil que no hace nada
+escribir('Escribe aquí un \'número\'');
+leer(numero);
+numero := numero + alpha;
+mientras (numero < x) hacer
+numero := numero +1;
+escribir ('numero=' || numero);
+fin_mientras
+fin

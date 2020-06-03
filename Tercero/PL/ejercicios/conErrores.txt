@@ -1,0 +1,13 @@
+(*
+Esto es un comentario con comentario anidado (* 
+*)
+inicio
+#programa inútil que no hace nada
+escribir('Escribe aquí un 'número' ');#aquí una cadena mal escrita
+leer(_numero);#identificador no válido
+numero := numero + alpha;
+mientras (numero < x) hacer
+numero := numero +1,1;#aquí un número mal escrito
+escribir ('numero=' || numero);
+fin_mientras
+fin

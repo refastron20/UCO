@@ -1,0 +1,205 @@
+Comentario de una línea: <# Programa que calcula la raíz de un número usando método de Newton> --> token 299
+ Comentario: <(*
+  Descripcion:
+         Raiz cuadrada de Newton
+
+         Se genera la siguiente sucesión de numeros x_n:
+            x_0 = ( numero + 1.0 ) / 2.0
+            x_n = 0.5 * (x_(n-1) + numero / x_(n-1))
+
+         De forma que:
+            lim x_n        =  raiz_cuadrada( numero )
+             n -> infinito
+*)> --> token 298
+
+ Palabra reservada: <inicio> --> token 257
+Comentario de una línea: <# Se pide el numero al que calcular la raíz.> --> token 299
+ Palabra reservada: <escribir> --> token 260
+
+ Paréntesis inicial: <(> --> token 293
+
+ Cadena: <Introduce un numero positivo: > --> token 296
+
+ Paréntesis final: <)> --> token 294
+
+ Fin de sentencia: <;> --> token 292
+
+ Palabra reservada: <leer> --> token 259
+
+ Paréntesis inicial: <(> --> token 293
+
+ Identificador: <numero> --> token 295
+
+ Paréntesis final: <)> --> token 294
+
+ Fin de sentencia: <;> --> token 292
+
+ Palabra reservada: <si> --> token 261
+
+ Paréntesis inicial: <(> --> token 293
+
+ Identificador: <numero> --> token 295
+
+ Operador: <<> --> token 283
+
+ Número: <0> --> token 297
+
+ Paréntesis final: <)> --> token 294
+
+ Palabra reservada: <entonces> --> token 262
+
+ Palabra reservada: <escribir> --> token 260
+
+ Paréntesis inicial: <(> --> token 293
+
+ Cadena: <El numero no puede ser negativo> --> token 296
+
+ Operador: <||> --> token 282
+
+ Cadena: <\n> --> token 296
+
+ Paréntesis final: <)> --> token 294
+
+ Fin de sentencia: <;> --> token 292
+
+ Palabra reservada: <si_no> --> token 263
+Comentario de una línea: <# Se pide el número de iteraciones para su cálculo.> --> token 299
+ Palabra reservada: <escribir> --> token 260
+
+ Paréntesis inicial: <(> --> token 293
+
+ Cadena: <Introduce el número de iteraciones: > --> token 296
+
+ Paréntesis final: <)> --> token 294
+
+ Fin de sentencia: <;> --> token 292
+
+ Palabra reservada: <leer> --> token 259
+
+ Paréntesis inicial: <(> --> token 293
+
+ Identificador: <iteraciones> --> token 295
+
+ Paréntesis final: <)> --> token 294
+
+ Fin de sentencia: <;> --> token 292
+Comentario de una línea: <# Comienzan las iteraciones.> --> token 299
+ Identificador: <x0> --> token 295
+
+ Operador: <:=> --> token 275
+
+ Paréntesis inicial: <(> --> token 293
+
+ Identificador: <numero> --> token 295
+
+ Operador: <+> --> token 276
+
+ Número: <1.0> --> token 297
+
+ Paréntesis final: <)> --> token 294
+
+ Operador: </> --> token 279
+
+ Número: <2.0> --> token 297
+
+ Fin de sentencia: <;> --> token 292
+
+ Identificador: <i> --> token 295
+
+ Operador: <:=> --> token 275
+
+ Número: <1> --> token 297
+
+ Fin de sentencia: <;> --> token 292
+
+ Palabra reservada: <repetir> --> token 268
+
+ Identificador: <x0> --> token 295
+
+ Operador: <:=> --> token 275
+
+ Número: <0.5> --> token 297
+
+ Operador: <*> --> token 278
+
+ Paréntesis inicial: <(> --> token 293
+
+ Identificador: <x0> --> token 295
+
+ Operador: <+> --> token 276
+
+ Identificador: <numero> --> token 295
+
+ Operador: </> --> token 279
+
+ Identificador: <x0> --> token 295
+
+ Paréntesis final: <)> --> token 294
+
+ Fin de sentencia: <;> --> token 292
+
+ Identificador: <i> --> token 295
+
+ Operador: <:=> --> token 275
+
+ Identificador: <i> --> token 295
+
+ Operador: <+> --> token 276
+
+ Número: <1> --> token 297
+
+ Fin de sentencia: <;> --> token 292
+
+ Palabra reservada: <hasta_que> --> token 269
+
+ Paréntesis inicial: <(> --> token 293
+
+ Identificador: <i> --> token 295
+
+ Operador: <>> --> token 285
+
+ Identificador: <iteraciones> --> token 295
+
+ Paréntesis final: <)> --> token 294
+
+ Fin de sentencia: <;> --> token 292
+
+ Palabra reservada: <escribir> --> token 260
+
+ Paréntesis inicial: <(> --> token 293
+
+ Cadena: <La aproximacion a la raiz cuadrada de > --> token 296
+
+ Paréntesis final: <)> --> token 294
+
+ Fin de sentencia: <;> --> token 292
+
+ Palabra reservada: <escribir> --> token 260
+
+ Paréntesis inicial: <(> --> token 293
+
+ Identificador: <numero> --> token 295
+
+ Operador: <||> --> token 282
+
+ Cadena: < es > --> token 296
+
+ Operador: <||> --> token 282
+
+ Identificador: <x0> --> token 295
+
+ Operador: <||> --> token 282
+
+ Cadena: <\n> --> token 296
+
+ Paréntesis final: <)> --> token 294
+
+ Fin de sentencia: <;> --> token 292
+
+ Palabra reservada: <fin_si> --> token 264
+
+ Fin de sentencia: <;> --> token 292
+
+ Palabra reservada: <fin> --> token 258
+
+ Fin de sentencia: <;> --> token 292

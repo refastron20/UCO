@@ -39,9 +39,9 @@ operador :=|\+|-|\*|\/|__mod|\*\*|\|\||<|<=|>|>=|==|<>|\.o\.|\.y\.|\.no\.
                   cadenaAux=minuscula(yytext);
                   token = esReservada(cadenaAux);
                   if(token!=-1){
-                    printf("\n Palabra reservada: <%s> --> token %d\n", yytext,token);
+                    fprintf(yyout,"\n Palabra reservada: <%s> --> token %d\n", yytext,token);
                   }else{
-                    printf("\n Identificador: <%s> --> token %d\n", yytext, IDENTIFICADOR);
+                    fprintf(yyout,"\n Identificador: <%s> --> token %d\n", yytext, IDENTIFICADOR);
                   }
                 }
 "'"               {
@@ -49,7 +49,7 @@ operador :=|\+|-|\*|\/|__mod|\*\*|\|\||<|<=|>|>=|==|<>|\.o\.|\.y\.|\.no\.
                   cadenaAux = malloc(sizeof(char));
                 }
 <ESTADO_CADENA>"'" {
-                    printf("\n Cadena: <%s> --> token %d\n", cadenaAux, CADENA);
+                    fprintf(yyout,"\n Cadena: <%s> --> token %d\n", cadenaAux, CADENA);
                     cadenaAux = NULL;
                     tamCadena = 0;
                     BEGIN 0;
@@ -66,75 +66,75 @@ operador :=|\+|-|\*|\/|__mod|\*\*|\|\||<|<=|>|>=|==|<>|\.o\.|\.y\.|\.no\.
                   }
 
 {numero}        {
-                  printf("\n Número: <%s> --> token %d\n", yytext, NUMERO);
+                  fprintf(yyout,"\n Número: <%s> --> token %d\n", yytext, NUMERO);
                 }
 {palabra}       {
-                  printf("\n error: Identificador no válido\n");
+                  fprintf(yyout,"\n error: Identificador no válido\n");
                 }
 [0-9]*,[0-9]*   {
-                  printf("\n error: Número no válido\n");
+                  fprintf(yyout,"\n error: Número no válido\n");
                 }
 {operador}      {
                   if(strcmp(yytext,":=")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, ASIGNACION);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, ASIGNACION);
                   }
                   if(strcmp(yytext,"+")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, SUMA);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, SUMA);
                   }
                   if(strcmp(yytext,"-")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, RESTA);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, RESTA);
                   }
                   if(strcmp(yytext,"*")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, PRODUCTO);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, PRODUCTO);
                   }
                   if(strcmp(yytext,"/")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, DIVISION);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, DIVISION);
                   }
                   if(strcmp(yytext,"__mod")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, MODULO);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, MODULO);
                   }
                   if(strcmp(yytext,"**")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, POTENCIA);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, POTENCIA);
                   }
                   if(strcmp(yytext,"||")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, CONCATENACION);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, CONCATENACION);
                   }
                   if(strcmp(yytext,"<")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, MENOR_QUE);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, MENOR_QUE);
                   }
                   if(strcmp(yytext,"<=")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, MENOR_IGUAL_QUE);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, MENOR_IGUAL_QUE);
                   }
                   if(strcmp(yytext,">")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, MAYOR_QUE);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, MAYOR_QUE);
                   }
                   if(strcmp(yytext,">=")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, MAYOR_IGUAL_QUE);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, MAYOR_IGUAL_QUE);
                   }
                   if(strcmp(yytext,"==")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, IGUAL);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, IGUAL);
                   }
                   if(strcmp(yytext,"<>")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, DISTINTO);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, DISTINTO);
                   }
                   if(strcmp(yytext,".o.")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, DISYUNCION_LOGICA);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, DISYUNCION_LOGICA);
                   }
                   if(strcmp(yytext,".y.")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, CONJUNCION_LOGICA);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, CONJUNCION_LOGICA);
                   }
                   if(strcmp(yytext,".no.")==0){
-                    printf("\n Operador: <%s> --> token %d\n", yytext, NEGACION_LOGICA);
+                    fprintf(yyout,"\n Operador: <%s> --> token %d\n", yytext, NEGACION_LOGICA);
                   }
                 }
 ; {
-  printf("\n Fin de sentencia: <%s> --> token %d\n", yytext, FIN_SENTENCIA);
+  fprintf(yyout,"\n Fin de sentencia: <%s> --> token %d\n", yytext, FIN_SENTENCIA);
 }
 \( {
-  printf("\n Paréntesis inicial: <%s> --> token %d\n", yytext, PARENTESIS_INICIAL);
+  fprintf(yyout,"\n Paréntesis inicial: <%s> --> token %d\n", yytext, PARENTESIS_INICIAL);
 }
 \) {
-  printf("\n Paréntesis final: <%s> --> token %d\n", yytext, PARENTESIS_FINAL);
+  fprintf(yyout,"\n Paréntesis final: <%s> --> token %d\n", yytext, PARENTESIS_FINAL);
 }
 
 "(*"    {
@@ -151,13 +151,13 @@ operador :=|\+|-|\*|\/|__mod|\*\*|\|\||<|<=|>|>=|==|<>|\.o\.|\.y\.|\.no\.
             comentario = realloc(comentario, tamComentario);
             comentario[tamComentario-1] = ')';
             comentario[tamComentario-2] = '*';
-            printf("\n Comentario: <%s> --> token %d\n", comentario, COMENTARIO);
+            fprintf(yyout,"\n Comentario: <%s> --> token %d\n", comentario, COMENTARIO);
             tamComentario = 0;
             comentario = NULL;
             }
 
 <ESTADO_COMENTARIO>"(*"(.|\n)    {
-                printf("error: No se pueden anidar comentarios.\n");
+                fprintf(yyout,"error: No se pueden anidar comentarios.\n Debería ser así:");
                 }
 <ESTADO_COMENTARIO>.|\n    {
         tamComentario++;
@@ -165,10 +165,10 @@ operador :=|\+|-|\*|\/|__mod|\*\*|\|\||<|<=|>|>=|==|<>|\.o\.|\.y\.|\.no\.
         comentario[tamComentario-1] = yytext[0];
         }
 
-#.*$ {printf("Comentario de una línea: <%s> --> token %d", yytext, COMENTARIO_LINEA);}
+#.*$ {fprintf(yyout,"Comentario de una línea: <%s> --> token %d", yytext, COMENTARIO_LINEA);}
 
 
-. {printf("%s<-carácter no reconocido\n",yytext);}
+. {fprintf(yyout,"%s<-carácter no reconocido\n",yytext);}
 %%
 
 /* Zona de funciones auxiliares */
@@ -195,6 +195,7 @@ int esReservada(char *cadena){
 
 int main(int argc, char *argv[]){
     yyin=fopen(argv[1],"r");
+    yyout=fopen(argv[2],"w");
     yylex();
     return 0;
 }
