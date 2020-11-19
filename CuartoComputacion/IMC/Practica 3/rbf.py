@@ -155,6 +155,8 @@ def train_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outputs
     TODO: Obtain the distances from the centroids to the test patterns
           and obtain the R matrix for the test set
     """
+    distances = cdist(test_inputs, centers)
+    calculate_r_matrix(distances, radii)
 
     # # # # KAGGLE # # # #
     if model_file != "":
@@ -188,6 +190,8 @@ def train_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outputs
               the CCR. Obtain also the MSE, but comparing the obtained
               probabilities and the target probabilities
         """
+        
+
 
     return train_mse, test_mse, train_ccr, test_ccr
 
@@ -242,6 +246,9 @@ def init_centroids_classification(train_inputs, train_outputs, num_rbf):
     """
 
     #TODO: Complete the code of the function
+    from sklearn.model_selection import train_test_split
+    centroids = train_test_split(train_inputs, train_outputs, test_size=num_rbf, stratify=train_outputs[:,-1])
+
     return centroids
 
 def clustering(classification, train_inputs, train_outputs, num_rbf):
@@ -273,11 +280,20 @@ def clustering(classification, train_inputs, train_outputs, num_rbf):
     """
 
     #TODO: Complete the code of the function
+    from sklearn.cluster import KMeans
+    #
     if (classification){
         centroids = init_centroids_classification(train_inputs, train_outputs, num_rbf)
+        kmeans = KMeans(n_clusters=num_rbf, init=centroids, n_init=1, max_iter=500).fit(train_inputs)
     }else{
-        
+        kmeans = KMeans(n_clusters=num_rbf, init=random, n_init=1, max_iter=500).fit(train_inputs)
     }
+
+    centers = kmeans.cluster_centers_
+
+    from scipy.spatial import cdist
+    distances = cdist(train_inputs, centers)
+
     return kmeans, distances, centers
 
 def calculate_radii(centers, num_rbf):
@@ -299,6 +315,11 @@ def calculate_radii(centers, num_rbf):
     """
 
     #TODO: Complete the code of the function
+    from scipy.spatial.distance import pdist
+    from scipy.spatial.distance import squareform
+    radii = squareform(pdist(centers))
+    radii = np.median(radii, axis = 0)
+    radii = np.divide(radii, 2)
     return radii
 
 def calculate_r_matrix(distances, radii):
@@ -322,6 +343,8 @@ def calculate_r_matrix(distances, radii):
     """
 
     #TODO: Complete the code of the function
+    from scipy.interpolate import Rbf
+
     return r_matrix
 
 def invert_matrix_regression(r_matrix, train_outputs):
@@ -346,6 +369,7 @@ def invert_matrix_regression(r_matrix, train_outputs):
     """
 
     #TODO: Complete the code of the function
+    coefficients = np.linalg.inv(r_matrix.T*r_matrix)*r_matrix.T*train_outputs
     return coefficients
 
 def logreg_classification(matriz_r, train_outputs, l2, eta):
@@ -373,6 +397,8 @@ def logreg_classification(matriz_r, train_outputs, l2, eta):
     """
 
     #TODO: Complete the code of the function
+    from sklearn.linear_model import LogisticRegression
+    logreg = LogisticRegression(penalty=l2, solver=liblinear, C=1/eta)
     return logreg
 
 
