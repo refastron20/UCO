@@ -156,7 +156,7 @@ def train_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outputs
           and obtain the R matrix for the test set
     """
     distances = cdist(test_inputs, centers)
-    calculate_r_matrix(distances, radii)
+    r_matrix_test = calculate_r_matrix(distances, radii)
 
     # # # # KAGGLE # # # #
     if model_file != "":
@@ -184,13 +184,26 @@ def train_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outputs
         TODO: Obtain the predictions for training and test and calculate
               the MSE
         """
+        test_predictions = logreg.predict(r_matrix_test)
+        test_mse = mean_squared_error(test_outputs, test_predictions)
+
+
+        train_predictions = logreg.predict(r_matrix)
+        train_mse = mean_squared_error(train_outputs, train_predictions)
     else:
         """
         TODO: Obtain the predictions for training and test and calculate
               the CCR. Obtain also the MSE, but comparing the obtained
               probabilities and the target probabilities
         """
-        
+        test_predictions = logreg.predict(r_matrix_test)
+        test_mse = mean_squared_error(test_outputs, test_predictions)
+        test_ccr = precission_score(test_outputs, test_predictions, average='micro')*100
+
+
+        train_predictions = logreg.predict(r_matrix)
+        train_mse = mean_squared_error(train_outputs, train_predictions)
+        train_ccr = precission_score(train_outputs, train_predictions, average='micro')*100
 
 
     return train_mse, test_mse, train_ccr, test_ccr
@@ -223,6 +236,7 @@ def read_data(train_file, test_file, outputs):
     """
 
     #TODO: Complete the code of the function
+
     return train_inputs, train_outputs, test_inputs, test_outputs
 
 def init_centroids_classification(train_inputs, train_outputs, num_rbf):
@@ -286,7 +300,7 @@ def clustering(classification, train_inputs, train_outputs, num_rbf):
         centroids = init_centroids_classification(train_inputs, train_outputs, num_rbf)
         kmeans = KMeans(n_clusters=num_rbf, init=centroids, n_init=1, max_iter=500).fit(train_inputs)
     }else{
-        kmeans = KMeans(n_clusters=num_rbf, init=random, n_init=1, max_iter=500).fit(train_inputs)
+        kmeans = KMeans(n_clusters=num_rbf, init='random', n_init=1, max_iter=500).fit(train_inputs)
     }
 
     centers = kmeans.cluster_centers_
@@ -345,6 +359,7 @@ def calculate_r_matrix(distances, radii):
     #TODO: Complete the code of the function
     from scipy.interpolate import Rbf
 
+
     return r_matrix
 
 def invert_matrix_regression(r_matrix, train_outputs):
@@ -398,7 +413,7 @@ def logreg_classification(matriz_r, train_outputs, l2, eta):
 
     #TODO: Complete the code of the function
     from sklearn.linear_model import LogisticRegression
-    logreg = LogisticRegression(penalty=l2, solver=liblinear, C=1/eta)
+    logreg = LogisticRegression(penalty='l2', solver='liblinear', C=1/eta)
     return logreg
 
 
