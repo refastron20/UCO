@@ -156,7 +156,7 @@ def train_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outputs
           and obtain the R matrix for the test set
     """
     distances = cdist(test_inputs, centers)
-    calculate_r_matrix(distances, radii)
+    r_matrix_test = calculate_r_matrix(distances, radii)
 
     # # # # KAGGLE # # # #
     if model_file != "":
@@ -190,7 +190,7 @@ def train_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outputs
               the CCR. Obtain also the MSE, but comparing the obtained
               probabilities and the target probabilities
         """
-        
+
 
 
     return train_mse, test_mse, train_ccr, test_ccr
