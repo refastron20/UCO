@@ -23,8 +23,8 @@ int main(){
   //{
     //#pragma omp for nowait
       for (unsigned i = 0; i < 6000; i++) {
-        for (unsigned j = 0; j < 6000; j++) {
-          for (unsigned k = 0; k < 6000; k++) {
+        for (unsigned k = 0; k < 6000; k++) {
+          for (unsigned j = 0; j < 6000; j++) {
             C[i][j] += A[i][k]*B[k][j];
           }
         }

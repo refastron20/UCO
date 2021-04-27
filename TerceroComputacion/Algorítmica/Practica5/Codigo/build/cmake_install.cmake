@@ -1,4 +1,4 @@
-# Install script for directory: /home/rafa/Escritorio/UCO/Tercero/Algorítmica/Practicas5/Codigo
+# Install script for directory: /home/rafa/Escritorio/GitHub/UCO/TerceroComputacion/Algorítmica/Practica5/Codigo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/rafa/Escritorio/UCO/Tercero/Algorítmica/Practicas5/Codigo/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/rafa/Escritorio/GitHub/UCO/TerceroComputacion/Algorítmica/Practica5/Codigo/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
