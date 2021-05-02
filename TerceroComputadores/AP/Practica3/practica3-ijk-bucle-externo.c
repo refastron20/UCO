@@ -7,7 +7,9 @@
 #define TAMBUCLE 4000
 float A[TAMMAT][TAMMAT], B[TAMMAT][TAMMAT], C[TAMMAT][TAMMAT];
 
-int main(){
+int main(int argc, char const *argv[]){
+  int numThreads = atoi(argv[1]);
+  printf("Número de hilos: %d\n", numThreads);
   srand(time(0));
 
 
@@ -20,7 +22,7 @@ int main(){
   }
 
 
-  //omp_set_numthreads(8);
+  omp_set_num_threads(numThreads);
   double t_ini = omp_get_wtime();
   #pragma omp parallel
   {

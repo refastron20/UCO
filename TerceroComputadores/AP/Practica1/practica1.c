@@ -2,14 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
-float A[6000][6000], B[6000][6000], C[6000][6000];
+float A[4000][4000], B[4000][4000], C[4000][4000];
 
 int main(){
   srand(time(0));
 
 
-  for (unsigned i = 0; i < 6000; i++) {
-    for (unsigned j = 0; j < 6000; j++) {
+  for (unsigned i = 0; i < 4000; i++) {
+    for (unsigned j = 0; j < 4000; j++) {
       A[i][j] = rand()%10;
       B[i][j] = rand()%10;
       C[i][j] = 0;
@@ -22,9 +22,9 @@ int main(){
   //#pragma omp parallel
   //{
     //#pragma omp for nowait
-      for (unsigned i = 0; i < 6000; i++) {
-        for (unsigned j = 0; j < 6000; j++) {
-          for (unsigned k = 0; k < 6000; k++) {
+      for (unsigned j = 0; j < 4000; j++) {
+        for (unsigned k = 0; k < 4000; k++) {
+          for (unsigned i= 0; i< 4000; i++) {
             C[i][j] += A[i][k]*B[k][j];
           }
         }

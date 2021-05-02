@@ -1,0 +1,8 @@
+Número de hilos: 2
+El tiempo total es 208.547586
+Número de hilos: 4
+El tiempo total es 192.190307
+Número de hilos: 8
+El tiempo total es 191.812754
+Número de hilos: 16
+El tiempo total es 226.573930
